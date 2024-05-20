@@ -1,0 +1,20 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Заказать пиццу</h2>
+
+    {% if pizza_list %}
+    <ul>
+
+      {% for pizza in pizza_list %}
+      <li>
+        <a href="{{pizza.get_absolute_url}}">{{ pizza.name }}</a> {{pizza.price}}
+      </li>
+      {% endfor %}
+      
+    </ul>
+    {% else %}
+      <p>Здесь скоро добавят пиццы.</p>
+    {% endif %}
+{% endblock %}
